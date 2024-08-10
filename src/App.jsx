@@ -39,7 +39,10 @@ const ImageGallery = () => {
         {images.map((image) => (
           <div key={`${image.id}`} className="image-item">
             <img src={image.imageUrl} alt={image.title} />
-            <p>Title: {image.title}</p>
+            <div className="image-info">
+              <p>Title: {image.title}</p>
+              <p>PP: {image.userName}</p>
+            </div>
           </div>
         ))}
       </div>

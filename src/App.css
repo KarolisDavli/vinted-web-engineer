@@ -5,10 +5,28 @@
 }
 
 .image-item {
+  position: relative;
   overflow: hidden;
   border-radius: 8px;
   position: relative;
   background: #f0f0f0; /* Background color for better visibility */
+}
+
+.image-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.image-item:hover .image-info {
+  opacity: 1; /* Show on hover */
 }
 
 .image-item img {
