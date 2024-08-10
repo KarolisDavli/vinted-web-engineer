@@ -1,12 +1,12 @@
 import {useState, useEffect} from "react";
 import fetchRandomImages from "./api/flickrAPI";
+import "./App.css";
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const loadImages = async () => {
-    if (loading) return; // Prevent multiple requests at once
     setLoading(true);
     const randomImages = await fetchRandomImages();
     setImages((prevImages) => [...prevImages, ...randomImages]);
@@ -30,14 +30,14 @@ const ImageGallery = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [loading]);
+  });
 
   return (
     <div>
       <h1>Random Flickr Images</h1>
       <div className="image-gallery">
-        {images.map((image, index) => (
-          <div key={`${image.id}-${index}`} className="image-item">
+        {images.map((image) => (
+          <div key={`${image.id}`} className="image-item">
             <img src={image.imageUrl} alt={image.title} />
             <p>Title: {image.title}</p>
           </div>
