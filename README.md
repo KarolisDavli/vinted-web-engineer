@@ -109,7 +109,14 @@ Project Structure
 
 To view the favorite images, you can either:
 
-- Console Check: Open the browser’s console and type JSON.parse(localStorage.getItem('favouriteImages')) to view all saved images.
+- Console Check: Open the browser’s console and type
+
+```bash
+JSON.parse(localStorage.getItem('favouriteImages'))
+```
+
+to view all saved images.
+
 - Enhancement: Implement a new component or page to list and view the favorite images.
 
 #### Future Enhancements
