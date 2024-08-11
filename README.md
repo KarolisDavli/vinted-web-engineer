@@ -67,7 +67,7 @@ yarn dev
 ```
 
 5. Open your browser:
-   Visit http://localhost:3000 to see the application in action.
+   Visit http://localhost:5173 to see the application in action.
 
 Project Structure
 
