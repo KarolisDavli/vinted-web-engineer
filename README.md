@@ -30,8 +30,8 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/image-gallery-react.git
-cd image-gallery-react
+git clone https://github.com/KarolisDavli/vinted-web-engineer.git
+cd vinted-web-engineer
 ```
 
 2. Install dependencies:
