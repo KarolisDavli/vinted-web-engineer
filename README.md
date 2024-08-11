@@ -91,12 +91,6 @@ Project Structure
 - fetchRandomImages: Fetches random images from the Flickr API, including image details and owner’s username.
 - fetchUserName: Retrieves the username of a Flickr user based on their user ID.
 
-### Main Component (ImageGallery.js)
-
-- State Management: Manages the loading state, images state, and triggers fetching of new images.
-- Infinite Scroll: Automatically loads more images when the user scrolls to the bottom of the page.
-- Favorite Functionality: Adds images to the local storage as favorites.
-
 ### Styling (App.css)
 
 - Responsive Design: Ensures the gallery layout is responsive with a three-column grid system.
