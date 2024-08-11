@@ -23,7 +23,7 @@ This project is a React application that fetches and displays random images from
 Before you begin, ensure you have the following installed:
 
 - Node.js (v14.x or higher)
-- npm or yarn (npm comes with Node.js)
+- npm or yarn
 
 ### Installation
 
