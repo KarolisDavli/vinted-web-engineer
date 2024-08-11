@@ -30,7 +30,6 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
 ```bash
-Copy code
 git clone https://github.com/your-username/image-gallery-react.git
 cd image-gallery-react
 ```
@@ -38,14 +37,12 @@ cd image-gallery-react
 2. Install dependencies:
 
 ```bash
-Copy code
 npm install
 ```
 
 or
 
 ```bash
-Copy code
 yarn install
 ```
 
@@ -54,21 +51,18 @@ yarn install
 Create a .env file in the root of the project and add your Flickr API key:
 
 ```plaintext
-Copy code
 VITE_REACT_APP_FLICKR_API_KEY=your_flickr_api_key
 ```
 
 4. Start the development server:
 
 ```bash
-Copy code
 npm run dev
 ```
 
 or
 
 ```bash
-Copy code
 yarn dev
 ```
 
@@ -78,7 +72,6 @@ yarn dev
 Project Structure
 
 ```bash
-Copy code
 ├── public/
 │ └── index.html
 ├── src/
@@ -131,7 +124,3 @@ To view the favorite images, you can either:
 - Remove from Favorites: Add the ability to remove images from favorites.
 - Lazy Loading: Implement lazy loading to optimize image loading and improve performance.
 - Error Handling UI: Improve user experience by providing visual feedback when errors occur during image fetching.
-
-### License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
