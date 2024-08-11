@@ -1,4 +1,4 @@
-const apiKey = "cd8f9f6092209e947c1da967024f625c";
+const apiKey = import.meta.env.VITE_REACT_APP_FLICKR_API_KEY;
 
 // Function to fetch the username for a given user ID
 const fetchUserName = async (userId) => {
@@ -24,11 +24,15 @@ const fetchRandomImages = async () => {
     const photos = [];
     for (const photo of data.photos.photo) {
       const userName = await fetchUserName(photo.owner); // Fetch username for each photo
+
+      // Add default title if not available
+      const title = photo.title.trim() === "" ? "Untitled" : photo.title;
+
       photos.push({
         id: photo.id,
         user_id: photo.owner,
-        userName: userName, // Include the username in the photo object
-        title: photo.title,
+        userName: userName,
+        title: title,
         imageUrl: `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`,
       });
     }

@@ -14,7 +14,7 @@ const ImageGallery = () => {
   };
 
   useEffect(() => {
-    loadImages(); // Fetch images when the component mounts
+    loadImages();
   }, []);
 
   useEffect(() => {
@@ -32,21 +32,43 @@ const ImageGallery = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
+  const addToFavorites = (image) => {
+    const favourites =
+      JSON.parse(localStorage.getItem("favouriteImages")) || [];
+
+    // Check if the image is already in favorites
+    if (!favourites.some((fav) => fav.id === image.id)) {
+      favourites.push(image);
+      localStorage.setItem("favouriteImages", JSON.stringify(favourites));
+      alert("Image added to favorites!");
+    } else {
+      alert("This image is already in your favorites!");
+    }
+  };
+
   return (
     <div>
-      <h1>Random Flickr Images</h1>
       <div className="image-gallery">
         {images.map((image) => (
-          <div key={`${image.id}`} className="image-item">
+          <div key={image.id} className="image-item">
             <img src={image.imageUrl} alt={image.title} />
             <div className="image-info">
-              <p>Title: {image.title}</p>
-              <p>PP: {image.userName}</p>
+              <div className="details">
+                <p className="title">{image.title}</p>
+                <div className="divider" />
+                <p className="user">{image.userName}</p>
+                <button
+                  className="fav-btn"
+                  onClick={() => addToFavorites(image)}
+                >
+                  Favourite
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
-      {loading && <p>Loading more images...</p>} {/* Show loading text */}
+      {loading && <p className="loading">Loading more images...</p>}
     </div>
   );
 };
